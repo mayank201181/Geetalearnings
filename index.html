@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geeta Learnings — Daily wisdom from the Bhagavad Gita</title>
+  <meta name="description" content="Learn the Bhagavad Gita one teaching at a time. All 18 chapters distilled into concise daily learning points with their source verses." />
+  <meta name="theme-color" content="#faf6ee" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#12141f" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%B7%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">ॐ</span>
+      <span class="brand-name">Geeta<span class="brand-accent">Learnings</span></span>
+    </div>
+    <div class="top-actions">
+      <span class="streak" id="streak-badge" title="Your visit streak">🔥 <span id="streak-count">1</span></span>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle light or dark theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path class="sun-icon" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m0-11.32L4.93 4.93m14.14 14.14-1.41-1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path class="moon-icon" d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6 8.5 8.5 0 1 0 20.4 14.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Teaching of the day">
+      <p class="hero-kicker" id="hero-kicker">Teaching of the day</p>
+      <article class="card daily-card" id="daily-card" aria-live="polite">
+        <!-- filled by app.js -->
+      </article>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="shuffle-btn">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M18 4l3 3-3 3M18 14l3 3-3 3M3 7h5c5 0 5 10 10 10h2M3 17h5c1.9 0 3.1-1.4 4-3.1M21 7h-3c-1.9 0-3.1 1.4-4 3.1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Another teaching
+        </button>
+        <button class="btn btn-wa" id="whatsapp-btn" title="Share this teaching as a card on WhatsApp">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </button>
+        <button class="btn btn-ghost" id="savecard-btn" title="Download this teaching as an image">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4M8 10l4 4 4-4M12 14V2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Save card
+        </button>
+      </div>
+      <p class="progress-line" id="progress-line"></p>
+    </section>
+
+    <section class="chapters" aria-label="All chapters">
+      <div class="section-head">
+        <h2>The Eighteen Chapters</h2>
+        <p>Seven hundred verses, one conversation. Tap any chapter to see its heart in a few lines.</p>
+      </div>
+      <div class="grid" id="chapter-grid"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p><span class="foot-deva">श्रीमद्भगवद्गीता</span> · 18 chapters · 700 verses · one teaching a day</p>
+    <p class="foot-note">Verse numbering follows the standard 700-verse text. Built for a mindful minute each day.</p>
+  </footer>
+
+  <dialog id="chapter-modal" class="modal" aria-labelledby="modal-title">
+    <div class="modal-inner" id="modal-inner"></div>
+  </dialog>
+
+  <dialog id="audience-modal" class="modal audience-modal" aria-labelledby="aud-title">
+    <div class="aud-inner">
+      <p class="aud-title" id="aud-title">Who is this for?</p>
+      <p class="aud-sub">The card gets a practical line written for them — it simply says “what this means for you”.</p>
+      <button class="aud-opt" data-aud="teen">
+        <span class="aud-label">🎒 A teenager</span>
+        <span class="aud-line" data-aud-line="teen"></span>
+      </button>
+      <button class="aud-opt" data-aud="adult">
+        <span class="aud-label">🏡 An adult</span>
+        <span class="aud-line" data-aud-line="adult"></span>
+      </button>
+      <button class="aud-opt" data-aud="trader">
+        <span class="aud-label">📈 A trader</span>
+        <span class="aud-line" data-aud-line="trader"></span>
+      </button>
+      <button class="aud-opt" data-aud="none">
+        <span class="aud-label">🪷 Just the teaching</span>
+        <span class="aud-line">The classic card, no interpretation line</span>
+      </button>
+      <button class="aud-cancel" id="aud-cancel">Cancel</button>
+    </div>
+  </dialog>
+
+  <script src="art.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="card.js"></script>
+</body>
+</html>
