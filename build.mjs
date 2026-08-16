@@ -2,7 +2,7 @@
 // The Vercel project builds with `node build.mjs` and serves dist/.
 import { mkdir, copyFile } from "node:fs/promises";
 
-const FILES = ["index.html", "styles.css", "app.js", "art.js", "data.js"];
+const FILES = ["index.html", "styles.css", "app.js", "art.js", "data.js", "card.js"];
 
 await mkdir("dist", { recursive: true });
 for (const f of FILES) {

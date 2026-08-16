@@ -150,23 +150,10 @@
     swapTo(next, "A teaching for this moment");
   });
 
-  /* ————— Share ————— */
-  document.getElementById("share-btn").addEventListener("click", function () {
-    var entry = points[currentIndex];
-    if (!entry) return;
-    var pt = entry.point;
-    var text = pt.title + " — " + pt.text + " (Bhagavad Gita " + pt.verse + ")";
-    if (navigator.share) {
-      navigator.share({ title: "Geeta Learnings", text: text, url: location.href }).catch(function () {});
-    } else if (navigator.clipboard) {
-      navigator.clipboard.writeText(text + " · " + location.href).then(function () {
-        var btn = document.getElementById("share-btn");
-        var old = btn.innerHTML;
-        btn.innerHTML = "Copied ✓";
-        setTimeout(function () { btn.innerHTML = old; }, 1600);
-      });
-    }
-  });
+  /* Expose the current teaching for the shareable card (card.js) */
+  window.GEETA = {
+    current: function () { return points[currentIndex]; }
+  };
 
   /* ————— Progress line ————— */
   function renderProgress() {

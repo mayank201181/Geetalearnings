@@ -271,6 +271,14 @@ main { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
 }
 .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
 
+.btn-wa {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 6px 18px -6px rgba(37, 211, 102, 0.55);
+}
+.btn-wa:hover { box-shadow: 0 8px 24px -6px rgba(37, 211, 102, 0.65); }
+.btn-wa:disabled { cursor: wait; }
+
 .progress-line {
   text-align: center;
   font-size: 0.8rem;
