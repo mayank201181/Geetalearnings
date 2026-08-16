@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geeta Learnings — Daily wisdom from the Bhagavad Gita</title>
+  <meta name="description" content="Learn the Bhagavad Gita one teaching at a time. All 18 chapters distilled into concise daily learning points with their source verses." />
+  <meta name="theme-color" content="#faf6ee" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#12141f" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%B7%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">ॐ</span>
+      <span class="brand-name">Geeta<span class="brand-accent">Learnings</span></span>
+    </div>
+    <div class="top-actions">
+      <span class="streak" id="streak-badge" title="Your visit streak">🔥 <span id="streak-count">1</span></span>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle light or dark theme">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path class="sun-icon" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m0-11.32L4.93 4.93m14.14 14.14-1.41-1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path class="moon-icon" d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6 8.5 8.5 0 1 0 20.4 14.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Teaching of the day">
+      <p class="hero-kicker" id="hero-kicker">Teaching of the day</p>
+      <article class="card daily-card" id="daily-card" aria-live="polite">
+        <!-- filled by app.js -->
+      </article>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="shuffle-btn">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M18 4l3 3-3 3M18 14l3 3-3 3M3 7h5c5 0 5 10 10 10h2M3 17h5c1.9 0 3.1-1.4 4-3.1M21 7h-3c-1.9 0-3.1 1.4-4 3.1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Another teaching
+        </button>
+        <button class="btn btn-ghost" id="share-btn">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Share
+        </button>
+      </div>
+      <p class="progress-line" id="progress-line"></p>
+    </section>
+
+    <section class="chapters" aria-label="All chapters">
+      <div class="section-head">
+        <h2>The Eighteen Chapters</h2>
+        <p>Seven hundred verses, one conversation. Tap any chapter to see its heart in a few lines.</p>
+      </div>
+      <div class="grid" id="chapter-grid"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p><span class="foot-deva">श्रीमद्भगवद्गीता</span> · 18 chapters · 700 verses · one teaching a day</p>
+    <p class="foot-note">Verse numbering follows the standard 700-verse text. Built for a mindful minute each day.</p>
+  </footer>
+
+  <dialog id="chapter-modal" class="modal" aria-labelledby="modal-title">
+    <div class="modal-inner" id="modal-inner"></div>
+  </dialog>
+
+  <script src="art.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
