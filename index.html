@@ -71,6 +71,30 @@
     <div class="modal-inner" id="modal-inner"></div>
   </dialog>
 
+  <dialog id="audience-modal" class="modal audience-modal" aria-labelledby="aud-title">
+    <div class="aud-inner">
+      <p class="aud-title" id="aud-title">Who is this for?</p>
+      <p class="aud-sub">The card gets a practical line written for them — it simply says “what this means for you”.</p>
+      <button class="aud-opt" data-aud="teen">
+        <span class="aud-label">🎒 A teenager</span>
+        <span class="aud-line" data-aud-line="teen"></span>
+      </button>
+      <button class="aud-opt" data-aud="adult">
+        <span class="aud-label">🏡 An adult</span>
+        <span class="aud-line" data-aud-line="adult"></span>
+      </button>
+      <button class="aud-opt" data-aud="trader">
+        <span class="aud-label">📈 A trader</span>
+        <span class="aud-line" data-aud-line="trader"></span>
+      </button>
+      <button class="aud-opt" data-aud="none">
+        <span class="aud-label">🪷 Just the teaching</span>
+        <span class="aud-line">The classic card, no interpretation line</span>
+      </button>
+      <button class="aud-cancel" id="aud-cancel">Cancel</button>
+    </div>
+  </dialog>
+
   <script src="art.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>

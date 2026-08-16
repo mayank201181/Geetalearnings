@@ -96,6 +96,18 @@
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  function lensHTML(pt) {
+    if (!pt.audiences) return "";
+    return (
+      '<div class="lens-row" role="group" aria-label="See what this means for different people">' +
+        '<button class="lens-chip" data-lens="teen">For a teen</button>' +
+        '<button class="lens-chip" data-lens="adult">For an adult</button>' +
+        '<button class="lens-chip" data-lens="trader">For a trader</button>' +
+      "</div>" +
+      '<p class="lens-line" hidden></p>'
+    );
+  }
+
   function cardHTML(entry) {
     var ch = entry.chapter, pt = entry.point;
     return (
@@ -108,8 +120,28 @@
         '<p class="sanskrit-translit">' + esc(pt.sanskritTranslit) + "</p>" +
         '<p class="sanskrit-meaning">“' + esc(pt.verseTranslation) + "”</p>" +
       "</div>" +
-      '<span class="verse-chip">Bhagavad Gita ' + esc(pt.verse) + "</span>"
+      lensHTML(pt) +
+      '<div><span class="verse-chip">Bhagavad Gita ' + esc(pt.verse) + "</span></div>"
     );
+  }
+
+  function wireLenses(pt) {
+    var line = dailyCard.querySelector(".lens-line");
+    var chips = dailyCard.querySelectorAll(".lens-chip");
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        var lens = chip.dataset.lens;
+        var isActive = chip.classList.contains("active");
+        chips.forEach(function (c) { c.classList.remove("active"); });
+        if (isActive) {
+          line.hidden = true;
+        } else {
+          chip.classList.add("active");
+          line.textContent = pt.audiences[lens];
+          line.hidden = false;
+        }
+      });
+    });
   }
 
   var dailyCard = document.getElementById("daily-card");
@@ -124,6 +156,7 @@
     markSeen(entry.id);
     var chBtn = dailyCard.querySelector(".daily-chapter");
     if (chBtn) chBtn.addEventListener("click", function () { openChapter(Number(chBtn.dataset.chapter)); });
+    if (entry.point.audiences) wireLenses(entry.point);
   }
 
   function swapTo(index, kicker) {
